@@ -2,14 +2,82 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Sylpheo</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2016-03-16T15:49:02+01:00</updated>
-<id>http://localhost:4000/</id>
+<link rel="self" type="application/atom+xml" href="http://sylpheo.github.io/feed.xml" />
+<link rel="alternate" type="text/html" href="http://sylpheo.github.io" />
+<updated>2016-03-16T16:37:30+01:00</updated>
+<id>http://sylpheo.github.io/</id>
 <author>
   <name>Sylpheo</name>
-  <uri>http://localhost:4000/</uri>
+  <uri>http://sylpheo.github.io/</uri>
   <email>contact@sylpheo.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[SSO (Single Sign-On)]]></title>
+  <link rel="alternate" type="text/html" href="http://sylpheo.github.io/blog/sso/" />
+  <id>http://sylpheo.github.io/blog/sso</id>
+  <published>2016-03-16T16:13:39+01:00</published>
+  <updated>2016-03-16T16:13:39+01:00</updated>
+  <author>
+    <name>Marion Aubard</name>
+    <uri>http://sylpheo.github.io</uri>
+    <email>marion.aubard@sylpheo.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Le &lt;strong&gt;SSO (Single Sign On)&lt;/strong&gt; permet à l’utilisateur de s’authentifier une seule fois pour accéder à plusieurs services, il n’a donc pas besoin de saisir une multitude de mots de passe.&lt;/p&gt;
+
+&lt;p&gt;Cela se fait principalement grâce au &lt;strong&gt;LDAP&lt;/strong&gt; et à des bases de données LDAP sur un serveur.&lt;/p&gt;
+
+&lt;p&gt;Attention, le SSO ne doit pas être confondu avec d’autres schémas d’authentification comme &lt;strong&gt;OpenID&lt;/strong&gt; ou &lt;strong&gt;OAuth&lt;/strong&gt;. Dans ces deux cas, l’utilisateur doit tout de même saisir ses identifiants à chaque fois qu’il utilise une application.&lt;/p&gt;
+
+&lt;h1 id=&quot;configurations-que-lon-retrouve-principalement&quot;&gt;Configurations que l’on retrouve principalement&lt;/h1&gt;
+
+&lt;h2 id=&quot;kerberos-based&quot;&gt;Kerberos based&lt;/h2&gt;
+
+&lt;p&gt;L’utilisateur s’authentifie une fois et obtient un ticket appelée &lt;strong&gt;TGT (Ticket-granting ticket)&lt;/strong&gt;. Les applications ayant besoin d’authentification utilisent ce ticket.
+Sur &lt;strong&gt;Windows&lt;/strong&gt;, les applications &lt;strong&gt;Active Directory&lt;/strong&gt; peuvent utiliser les tickets. Active Directory utilise LDAP. Active Directory est géré sur Windows Server et permet de gérer un domaine et des utilisateurs. Dans un parc informatique, un utilisateur est lié à un compte et récupère son environnement quand il est connecté.
+Dans les environnements &lt;strong&gt;Unix/Linux&lt;/strong&gt;, il faut se logger via un Kerberos &lt;strong&gt;PAM (Pluggable Authentication Module)&lt;/strong&gt;. Ces modules intègrent des schémas d’authentification de bas-niveau via une API de haut-niveau.
+&lt;strong&gt;Firefox&lt;/strong&gt; et &lt;strong&gt;SVN&lt;/strong&gt; utilisent par exemple des tickets.&lt;/p&gt;
+
+&lt;h2 id=&quot;smart-card-based&quot;&gt;Smart card based&lt;/h2&gt;
+
+&lt;p&gt;L’utilisateur s’authentifie une seule fois et les données d’authentification sont stockées sur la carte.&lt;/p&gt;
+
+&lt;h2 id=&quot;integrated-windows-authentication-iwa&quot;&gt;Integrated Windows Authentication (IWA)&lt;/h2&gt;
+
+&lt;p&gt;Ce terme est associé aux produits Windows. Il réfère à plusieurs protocoles d’authentification comme &lt;strong&gt;Kerberos&lt;/strong&gt;. Il s’utilise surtout en interconnexion avec Internet Explorer. Il s’est étendu via la plate-forme &lt;strong&gt;Active Directory&lt;/strong&gt; pour le rendre portable sur Mac, Unix/Linux.&lt;/p&gt;
+
+&lt;h2 id=&quot;security-assertion-markup-language-saml&quot;&gt;Security Assertion Markup Language (SAML)&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;SAML&lt;/strong&gt; permet d’échanger des informations de sécurité entre un utilisateur, un fournisseur d’identité et un fournisseur d’accès. L’encryption se fait à l’aide d’un fichier XML. &lt;strong&gt;Il utilise le SSO via un navigateur web&lt;/strong&gt;. Le SSO se situe au niveau de l’intranet, par les cookies par exemple.
+Il y a trois entités à prendre en compte :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;L’utilisateur - the &lt;strong&gt;principal&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Le fournisseur d’identité (identity provider) - &lt;strong&gt;idP&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Le fournisseur d’accès (service provider) - &lt;strong&gt;SP&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/sso.png&quot; alt=&quot;Représentation du SSO&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Le scénario d’utilisation est le suivant :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;L’utilisateur demande un service au fournisseur d’accès.&lt;/li&gt;
+  &lt;li&gt;Le fournisseur d’accès vérifié les informations d’identité grâce au fournisseur d’identité.&lt;/li&gt;
+  &lt;li&gt;Suivant la réponse, le fournisseur d’accès peut contrôler l’accès, c’est-à-dire fournir le service à l’utilisateur connecté.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Le fournisseur d’identité demande des informations à l’utilisateur (nom d’utilisateur, mot de passe) pour l’authentifier. SAML spécifie les assertions entre les trois parties, plus précisément entre l’idP et le SP. Une identité peut être liée à plusieurs services grâce au SAML. De la même manière, un SP peut être relié à plusieurs idP.
+SAML ne donne pas de spécifications précises sur la méthode de connexion : cela peut-être un couple nom d’utilisateur-mot de passe ou une authentification à multiple facteurs. Active Directory peut être un moyen de se connecter lui aussi.&lt;/p&gt;
+
+&lt;h2 id=&quot;enterprise-sso-esso&quot;&gt;Enterprise SSO (ESSO)&lt;/h2&gt;
+
+&lt;p&gt;Les agents sont installés sur chaque poste de travail.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://sylpheo.github.io/blog/sso/&quot;&gt;SSO (Single Sign-On)&lt;/a&gt; was originally published by Sylpheo at &lt;a href=&quot;http://sylpheo.github.io&quot;&gt;Sylpheo&lt;/a&gt; on March 16, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 </feed>

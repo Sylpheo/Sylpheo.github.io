@@ -1,5 +1,13 @@
 [
 
+  
+    {
+      "title"			: "SSO (Single Sign-On)",
+      "link"			: "http://sylpheo.github.io/blog/sso/",
+      "excerpt"		: "Le SSO (Single Sign On) permet à l’utilisateur de s’authentifier une seule fois pour accéder à plusieurs services, il n’a donc pas besoin de saisir une multitude de mots de passe."
+    }
+  
+
 
 
   
@@ -17,7 +25,7 @@
   
     ,{
       "title"			: "Theme Setup",
-      "link"			: "http://localhost:4000/theme-setup/",
+      "link"			: "http://sylpheo.github.io/theme-setup/",
       "excerpt"		: "Instructions on how to install and customize the Jekyll theme So Simple."
     }
   
@@ -25,7 +33,7 @@
   
     ,{
       "title"			: "About the Jekyll Theme",
-      "link"			: "http://localhost:4000/about/",
+      "link"			: "http://sylpheo.github.io/about/",
       "excerpt"		: "So Simple is a responsive Jekyll theme for your words and images."
     }
   

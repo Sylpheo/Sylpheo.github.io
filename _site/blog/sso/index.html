@@ -1,0 +1,240 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>SSO (Single Sign-On) &#8211; Sylpheo</title>
+<meta name="description" content="Le SSO (Single Sign On) permet à l’utilisateur de s’authentifier une seule fois pour accéder à plusieurs services, il n’a donc pas besoin de saisir une multitude de mots de passe.
+
+">
+<meta name="keywords" content="identity, saml, sso">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="SSO (Single Sign-On)">
+<meta name="twitter:description" content="Le SSO (Single Sign On) permet à l’utilisateur de s’authentifier une seule fois pour accéder à plusieurs services, il n’a donc pas besoin de saisir une multitude de mots de passe.
+
+">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sylpheo.github.io/images/site-logo.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSO (Single Sign-On)">
+<meta property="og:description" content="Le SSO (Single Sign On) permet à l’utilisateur de s’authentifier une seule fois pour accéder à plusieurs services, il n’a donc pas besoin de saisir une multitude de mots de passe.
+
+">
+<meta property="og:url" content="http://sylpheo.github.io/blog/sso/">
+<meta property="og:site_name" content="Sylpheo">
+
+
+
+
+
+<link rel="canonical" href="http://sylpheo.github.io/blog/sso/">
+<link href="http://sylpheo.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Sylpheo Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://sylpheo.github.io/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://sylpheo.github.io/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://sylpheo.github.io/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://sylpheo.github.io/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://sylpheo.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://sylpheo.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://sylpheo.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://sylpheo.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://sylpheo.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://sylpheo.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="http://sylpheo.github.io/articles/" >Articles</a></li>
+		  
+		    
+		    <li><a href="http://sylpheo.github.io/blog/" >Blog</a></li>
+		  
+		    
+		    <li><a href="http://sylpheo.github.io/search/" >Search</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<header class="masthead">
+	<div class="wrap">
+      
+  		<a href="http://sylpheo.github.io/" class="site-logo" rel="home" title="Sylpheo"><img src="http://sylpheo.github.io/images/site-logo.png" width="200" height="200" alt="Sylpheo logo" class="animated fadeInDown"></a>
+      
+      <h1 class="site-title animated fadeIn"><a href="http://sylpheo.github.io/">Sylpheo</a></h1>
+		<h2 class="site-description animated fadeIn" itemprop="description">Technical blog</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://sylpheo.github.io/tags/#identity" title="Pages tagged identity">identity</a></li><li><a href="http://sylpheo.github.io/tags/#saml" title="Pages tagged saml">saml</a></li><li><a href="http://sylpheo.github.io/tags/#sso" title="Pages tagged sso">sso</a></li>
+        </ul>
+        
+          <h1 class="entry-title">SSO (Single Sign-On)</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://sylpheo.github.io/images/marion-aubard.png" class="bio-photo" alt="Marion Aubard bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Marion Aubard</span></span>
+        <span class="entry-date date published"><time datetime="2016-03-16T16:13:39+01:00"><i class="fa fa-calendar-o"></i> March 16, 2016</time></span>
+        
+        
+        
+        
+      </footer>
+      <div class="entry-content">
+        <p>Le <strong>SSO (Single Sign On)</strong> permet à l’utilisateur de s’authentifier une seule fois pour accéder à plusieurs services, il n’a donc pas besoin de saisir une multitude de mots de passe.</p>
+
+<p>Cela se fait principalement grâce au <strong>LDAP</strong> et à des bases de données LDAP sur un serveur.</p>
+
+<p>Attention, le SSO ne doit pas être confondu avec d’autres schémas d’authentification comme <strong>OpenID</strong> ou <strong>OAuth</strong>. Dans ces deux cas, l’utilisateur doit tout de même saisir ses identifiants à chaque fois qu’il utilise une application.</p>
+
+<h1 id="configurations-que-lon-retrouve-principalement">Configurations que l’on retrouve principalement</h1>
+
+<h2 id="kerberos-based">Kerberos based</h2>
+
+<p>L’utilisateur s’authentifie une fois et obtient un ticket appelée <strong>TGT (Ticket-granting ticket)</strong>. Les applications ayant besoin d’authentification utilisent ce ticket.
+Sur <strong>Windows</strong>, les applications <strong>Active Directory</strong> peuvent utiliser les tickets. Active Directory utilise LDAP. Active Directory est géré sur Windows Server et permet de gérer un domaine et des utilisateurs. Dans un parc informatique, un utilisateur est lié à un compte et récupère son environnement quand il est connecté.
+Dans les environnements <strong>Unix/Linux</strong>, il faut se logger via un Kerberos <strong>PAM (Pluggable Authentication Module)</strong>. Ces modules intègrent des schémas d’authentification de bas-niveau via une API de haut-niveau.
+<strong>Firefox</strong> et <strong>SVN</strong> utilisent par exemple des tickets.</p>
+
+<h2 id="smart-card-based">Smart card based</h2>
+
+<p>L’utilisateur s’authentifie une seule fois et les données d’authentification sont stockées sur la carte.</p>
+
+<h2 id="integrated-windows-authentication-iwa">Integrated Windows Authentication (IWA)</h2>
+
+<p>Ce terme est associé aux produits Windows. Il réfère à plusieurs protocoles d’authentification comme <strong>Kerberos</strong>. Il s’utilise surtout en interconnexion avec Internet Explorer. Il s’est étendu via la plate-forme <strong>Active Directory</strong> pour le rendre portable sur Mac, Unix/Linux.</p>
+
+<h2 id="security-assertion-markup-language-saml">Security Assertion Markup Language (SAML)</h2>
+
+<p><strong>SAML</strong> permet d’échanger des informations de sécurité entre un utilisateur, un fournisseur d’identité et un fournisseur d’accès. L’encryption se fait à l’aide d’un fichier XML. <strong>Il utilise le SSO via un navigateur web</strong>. Le SSO se situe au niveau de l’intranet, par les cookies par exemple.
+Il y a trois entités à prendre en compte :</p>
+
+<ul>
+  <li>L’utilisateur - the <strong>principal</strong></li>
+  <li>Le fournisseur d’identité (identity provider) - <strong>idP</strong></li>
+  <li>Le fournisseur d’accès (service provider) - <strong>SP</strong></li>
+</ul>
+
+<p><img src="/images/sso.png" alt="Représentation du SSO" /></p>
+
+<p>Le scénario d’utilisation est le suivant :</p>
+
+<ul>
+  <li>L’utilisateur demande un service au fournisseur d’accès.</li>
+  <li>Le fournisseur d’accès vérifié les informations d’identité grâce au fournisseur d’identité.</li>
+  <li>Suivant la réponse, le fournisseur d’accès peut contrôler l’accès, c’est-à-dire fournir le service à l’utilisateur connecté.</li>
+</ul>
+
+<p>Le fournisseur d’identité demande des informations à l’utilisateur (nom d’utilisateur, mot de passe) pour l’authentifier. SAML spécifie les assertions entre les trois parties, plus précisément entre l’idP et le SP. Une identité peut être liée à plusieurs services grâce au SAML. De la même manière, un SP peut être relié à plusieurs idP.
+SAML ne donne pas de spécifications précises sur la méthode de connexion : cela peut-être un couple nom d’utilisateur-mot de passe ou une authentification à multiple facteurs. Active Directory peut être un moyen de se connecter lui aussi.</p>
+
+<h2 id="enterprise-sso-esso">Enterprise SSO (ESSO)</h2>
+
+<p>Les agents sont installés sur chaque poste de travail.</p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2016 Sylpheo. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  
+	
+  <a href="http://sylpheo.github.io/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://sylpheo.github.io';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://sylpheo.github.io/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://sylpheo.github.io/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>

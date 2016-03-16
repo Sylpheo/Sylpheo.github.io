@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/</loc>
+<loc>http://sylpheo.github.io/blog/sso/</loc>
+<lastmod>2016-03-16T16:13:39+01:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/blog/</loc>
+<loc>http://sylpheo.github.io/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/articles/</loc>
+<loc>http://sylpheo.github.io/blog/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/theme-setup/</loc>
+<loc>http://sylpheo.github.io/articles/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/about/</loc>
+<loc>http://sylpheo.github.io/theme-setup/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/tags/</loc>
+<loc>http://sylpheo.github.io/about/</loc>
+</url>
+<url>
+<loc>http://sylpheo.github.io/tags/</loc>
 </url>
 </urlset>
