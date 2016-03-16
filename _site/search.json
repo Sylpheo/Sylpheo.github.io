@@ -2,6 +2,14 @@
 
   
     {
+      "title"			: "Accéder à la base de données sqlite sur un périphérique Android via adb",
+      "link"			: "http://sylpheo.github.io/blog/android-db/",
+      "excerpt"		: "  Localiser adb. Soit il est installé et peut-être accédé directement dans le terminal via adb ou utilisé de la manière suivante :  cd  /Users/marion/Library/Android/sdk/platform-tools  Utiliser la commande shell :   ./adb shell       ou  adb shell  Ouvrir sqlite3 sur la base de données souhaitée. Pour savoir laquelle utiliser, ouvrir le ADM (Android Device Monitor) et rechercher le chemin de la base de données. Cela donne un résultat de la forme :   sqlite3 /data/data/com.marion.whiteladder/databases/Area.db  Utiliser ensuite des requêtes SQL pour alimenter la base ou récupérer ses informations."
+    }
+  
+
+  
+    ,{
       "title"			: "Salesforce Identity",
       "link"			: "http://sylpheo.github.io/blog/salesforce-identity/",
       "excerpt"		: "Salesforce Identity est un IAM à travers la plate-forme Salesforce. IAM (Identity and Access Management) permet de contrôler l’accès aux utilisateurs sur des ordinateurs. Cela peut aller de l’authentification à la récupération de données descriptives sur les utilisateurs.Salesforce Identity permet d’améliorer l’utilisation de la plate-forme grâce au SSO des utilisateurs finaux, à simplifier l’administration grâce à l’automatisation de l’identité de l’utilisateur et de ses droits d’accès."

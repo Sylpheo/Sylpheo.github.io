@@ -4,13 +4,42 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://sylpheo.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://sylpheo.github.io" />
-<updated>2016-03-16T16:45:07+01:00</updated>
+<updated>2016-03-16T16:49:30+01:00</updated>
 <id>http://sylpheo.github.io/</id>
 <author>
   <name>Sylpheo</name>
   <uri>http://sylpheo.github.io/</uri>
   <email>contact@sylpheo.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Accéder à la base de données sqlite sur un périphérique Android via adb]]></title>
+  <link rel="alternate" type="text/html" href="http://sylpheo.github.io/blog/android-db/" />
+  <id>http://sylpheo.github.io/blog/android-db</id>
+  <published>2016-03-16T16:46:01+01:00</published>
+  <updated>2016-03-16T16:46:01+01:00</updated>
+  <author>
+    <name>Marion Aubard</name>
+    <uri>http://sylpheo.github.io</uri>
+    <email>marion.aubard@sylpheo.com</email>
+  </author>
+  <content type="html">
+    &lt;ul&gt;
+  &lt;li&gt;Localiser &lt;strong&gt;adb&lt;/strong&gt;. Soit il est installé et peut-être accédé directement dans le terminal via &lt;strong&gt;adb&lt;/strong&gt; ou utilisé de la manière suivante :
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;cd  /Users/marion/Library/Android/sdk/platform-tools&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Utiliser la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;shell&lt;/code&gt; : 
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;./adb shell&lt;/code&gt; 
+      ou
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;adb shell&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Ouvrir &lt;code class=&quot;highlighter-rouge&quot;&gt;sqlite3&lt;/code&gt; sur la base de données souhaitée. Pour savoir laquelle utiliser, ouvrir le &lt;strong&gt;ADM (Android Device Monitor)&lt;/strong&gt; et rechercher le chemin de la base de données. Cela donne un résultat de la forme : 
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;sqlite3 /data/data/com.marion.whiteladder/databases/Area.db&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Utiliser ensuite des requêtes SQL pour alimenter la base ou récupérer ses informations.&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://sylpheo.github.io/blog/android-db/&quot;&gt;Accéder à la base de données sqlite sur un périphérique Android via adb&lt;/a&gt; was originally published by Sylpheo at &lt;a href=&quot;http://sylpheo.github.io&quot;&gt;Sylpheo&lt;/a&gt; on March 16, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
