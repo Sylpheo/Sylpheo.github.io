@@ -5,14 +5,18 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Latest Posts &#8211; Sylpheo</title>
-<meta name="description" content="A simple and clean responsive Jekyll theme for words and photos.">
+<title>Connecter Drupal et Salesforce &#8211; Sylpheo</title>
+<meta name="description" content="Configuration préalable de Drupal
 
+">
+<meta name="keywords" content="connector, drupal, salesforce">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Latest Posts">
-<meta name="twitter:description" content="A simple and clean responsive Jekyll theme for words and photos.">
+<meta name="twitter:title" content="Connecter Drupal et Salesforce">
+<meta name="twitter:description" content="Configuration préalable de Drupal
+
+">
 
 
 
@@ -22,16 +26,18 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Latest Posts">
-<meta property="og:description" content="A simple and clean responsive Jekyll theme for words and photos.">
-<meta property="og:url" content="http://sylpheo.github.io/">
+<meta property="og:title" content="Connecter Drupal et Salesforce">
+<meta property="og:description" content="Configuration préalable de Drupal
+
+">
+<meta property="og:url" content="http://sylpheo.github.io/blog/connect-drupal-salesforce/">
 <meta property="og:site_name" content="Sylpheo">
 
 
 
 
 
-<link rel="canonical" href="http://sylpheo.github.io/">
+<link rel="canonical" href="http://sylpheo.github.io/blog/connect-drupal-salesforce/">
 <link href="http://sylpheo.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Sylpheo Feed">
 
 <!-- https://t.co/dKP3o1e -->
@@ -76,7 +82,7 @@
 
 </head>
 
-<body id="page">
+<body id="post">
 
 <div class="navigation-wrapper">
 	<nav role="navigation" id="site-nav" class="animated drop">
@@ -111,27 +117,96 @@
 
 
 <div id="main" role="main">
-  <article class="entry">
+  <article class="hentry">
     
     <div class="entry-wrapper">
       <header class="entry-header">
-        <h1 class="entry-title">Latest Posts</h1>
+        <ul class="entry-tags">
+          <li><a href="http://sylpheo.github.io/tags/#connector" title="Pages tagged connector">connector</a></li><li><a href="http://sylpheo.github.io/tags/#drupal" title="Pages tagged drupal">drupal</a></li><li><a href="http://sylpheo.github.io/tags/#salesforce" title="Pages tagged salesforce">salesforce</a></li>
+        </ul>
+        
+          <h1 class="entry-title">Connecter Drupal et Salesforce</h1>
+        
       </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://sylpheo.github.io/images/marion-aubard.png" class="bio-photo" alt="Marion Aubard bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Marion Aubard</span></span>
+        <span class="entry-date date published"><time datetime="2016-03-16T16:50:42+01:00"><i class="fa fa-calendar-o"></i> March 16, 2016</time></span>
+        
+        
+        
+        
+      </footer>
       <div class="entry-content">
-        <ul class="post-list">
+        <h1 id="configuration-pralable-de-drupal">Configuration préalable de Drupal</h1>
 
-  <li><article><a href="http://sylpheo.github.io/blog/connect-drupal-salesforce/">Connecter Drupal et Salesforce <span class="entry-date"><time datetime="2016-03-16T16:50:42+01:00">March 16, 2016</time></span> <span class="excerpt">Configuration préalable de Drupal</span></a></article></li>
+<p>Il est possible de synchroniser les objets entre Salesforce et Drupal.
+Activer <code class="highlighter-rouge">Update manager</code> dans les modules.
+Pour cela sur Drupal, dans Importer un module, ajouter les modules suivants :</p>
 
-  <li><article><a href="http://sylpheo.github.io/blog/android-db/">Accéder à la base de données sqlite sur un périphérique Android via adb <span class="entry-date"><time datetime="2016-03-16T16:46:01+01:00">March 16, 2016</time></span> <span class="excerpt">  Localiser adb. Soit il est installé et peut-être accédé directement dans le terminal via adb ou utilisé de la manière suivante :  cd  /Users/marion/Library/Android/sdk/platform-tools  Utiliser la commande shell :   ./adb shell       ou  adb shell  Ouvrir sqlite3 sur la base de données souhaitée. Pour savoir laquelle utiliser, ouvrir le ADM (Android Device Monitor) et rechercher le chemin de la base de données. Cela donne un résultat de la forme :   sqlite3 /data/data/com.marion.whiteladder/databases/Area.db  Utiliser ensuite des requêtes SQL pour alimenter la base ou récupérer ses informations.</span></a></article></li>
-
-  <li><article><a href="http://sylpheo.github.io/blog/salesforce-identity/">Salesforce Identity <span class="entry-date"><time datetime="2016-03-16T16:42:48+01:00">March 16, 2016</time></span> <span class="excerpt">Salesforce Identity est un IAM à travers la plate-forme Salesforce. IAM (Identity and Access Management) permet de contrôler l’accès aux utilisateurs sur des ordinateurs. Cela peut aller de l’authentification à la récupération de données descriptives sur les utilisateurs.Salesforce Identity permet d’améliorer l’utilisation de la plate-forme grâce au SSO des utilisateurs finaux, à simplifier l’administration grâce à l’automatisation de l’identité de l’utilisateur et de ses droits d’accès.</span></a></article></li>
-
-  <li><article><a href="http://sylpheo.github.io/blog/sso/">SSO (Single Sign-On) <span class="entry-date"><time datetime="2016-03-16T16:13:39+01:00">March 16, 2016</time></span> <span class="excerpt">Le SSO (Single Sign On) permet à l’utilisateur de s’authentifier une seule fois pour accéder à plusieurs services, il n’a donc pas besoin de saisir une multitude de mots de passe.</span></a></article></li>
-
+<ul>
+  <li><a href="https://ftp.drupal.org/files/projects/salesforce-7.x-3.1.tar.gz">Salesforce Suite</a></li>
+  <li><a href="https://ftp.drupal.org/files/projects/ctools-7.x-1.9.tar.gz">Ctools</a></li>
+  <li><a href="https://ftp.drupal.org/files/projects/entity-7.x-1.6.tar.gz">Entity</a></li>
+  <li><a href="https://ftp.drupal.org/files/projects/libraries-7.x-2.2.tar.gz">Libraries</a></li>
+  <li><a href="https://ftp.drupal.org/files/projects/views-7.x-3.13.tar.gz">Views</a></li>
 </ul>
 
+<p>Il suffit ensuite de connecter les deux services entre eux.</p>
+
+<h1 id="cration-dune-application-connecte-sur-salesforce">Création d’une application connectée sur Salesforce</h1>
+
+<p>Sur Salesforce, créer une application connectée :</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Setup &gt; Create &gt; App &gt; New Connected App</code></li>
+  <li><code class="highlighter-rouge">Enable OAuth settings</code></li>
+  <li><code class="highlighter-rouge">Callback URL</code> : l’URL de Drupal (exemple : http://localhost/drupal/salesforce/oauth_callback)</li>
+  <li>
+    <p><code class="highlighter-rouge">Selected OAuth scopes</code></p>
+
+    <ul>
+      <li><code class="highlighter-rouge">Perform requests on your behalf at any time</code></li>
+      <li><code class="highlighter-rouge">Access and manage your data</code></li>
+      <li><code class="highlighter-rouge">Access your basic information</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="configurer-salesforce-sur-drupal">Configurer Salesforce sur Drupal</h1>
+
+<p>Sur Drupal, après avoir installé les modules, configurer Salesforce</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Modules &gt; Salesforce API &gt; Configurer &gt; Authorize</code></li>
+  <li>Ajouter les consumer et client keys de l’application connectée précédemment créée.</li>
+  <li>Dans <code class="highlighter-rouge">Advanced</code>, mettre l’URL de connexion (https://login.salesforce.com ou portail de la communauté)</li>
+  <li>Cliquer sur <code class="highlighter-rouge">Authorize</code></li>
+</ul>
+
+<h1 id="interfacer-le-modle-de-donnes-drupal-avec-celui-de-salesforce">Interfacer le modèle de données Drupal avec celui de Salesforce</h1>
+
+<p>Sur Drupal, créer ensuite un mapping entre objet Salesforce et Drupal :</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Modules &gt; Salesforce Mapping &gt; Configurer &gt; add salesforce mapping</code></li>
+  <li>Choisir une entité Drupal et un objet Salesforce</li>
+  <li>Ajouter un mapping entre un champ de l’objet Drupal, et un de Salesforce. Attention, côté Salesforce, il faut que ce soit un external id.</li>
+  <li>Choisir la méthode de synchronisation</li>
+</ul>
+
+        
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://sylpheo.github.io/blog/android-db/" class="btn" title="Accéder à la base de données sqlite sur un périphérique Android via adb">Previous</a>
+      
+      
+    </nav><!-- /.pagination -->
   </article>
 </div><!-- /#main -->
 

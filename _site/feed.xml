@@ -4,13 +4,87 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://sylpheo.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://sylpheo.github.io" />
-<updated>2016-03-16T16:49:30+01:00</updated>
+<updated>2016-03-16T16:56:16+01:00</updated>
 <id>http://sylpheo.github.io/</id>
 <author>
   <name>Sylpheo</name>
   <uri>http://sylpheo.github.io/</uri>
   <email>contact@sylpheo.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Connecter Drupal et Salesforce]]></title>
+  <link rel="alternate" type="text/html" href="http://sylpheo.github.io/blog/connect-drupal-salesforce/" />
+  <id>http://sylpheo.github.io/blog/connect-drupal-salesforce</id>
+  <published>2016-03-16T16:50:42+01:00</published>
+  <updated>2016-03-16T16:50:42+01:00</updated>
+  <author>
+    <name>Marion Aubard</name>
+    <uri>http://sylpheo.github.io</uri>
+    <email>marion.aubard@sylpheo.com</email>
+  </author>
+  <content type="html">
+    &lt;h1 id=&quot;configuration-pralable-de-drupal&quot;&gt;Configuration préalable de Drupal&lt;/h1&gt;
+
+&lt;p&gt;Il est possible de synchroniser les objets entre Salesforce et Drupal.
+Activer &lt;code class=&quot;highlighter-rouge&quot;&gt;Update manager&lt;/code&gt; dans les modules.
+Pour cela sur Drupal, dans Importer un module, ajouter les modules suivants :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ftp.drupal.org/files/projects/salesforce-7.x-3.1.tar.gz&quot;&gt;Salesforce Suite&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ftp.drupal.org/files/projects/ctools-7.x-1.9.tar.gz&quot;&gt;Ctools&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ftp.drupal.org/files/projects/entity-7.x-1.6.tar.gz&quot;&gt;Entity&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ftp.drupal.org/files/projects/libraries-7.x-2.2.tar.gz&quot;&gt;Libraries&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ftp.drupal.org/files/projects/views-7.x-3.13.tar.gz&quot;&gt;Views&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Il suffit ensuite de connecter les deux services entre eux.&lt;/p&gt;
+
+&lt;h1 id=&quot;cration-dune-application-connecte-sur-salesforce&quot;&gt;Création d’une application connectée sur Salesforce&lt;/h1&gt;
+
+&lt;p&gt;Sur Salesforce, créer une application connectée :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Setup &amp;gt; Create &amp;gt; App &amp;gt; New Connected App&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Enable OAuth settings&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Callback URL&lt;/code&gt; : l’URL de Drupal (exemple : http://localhost/drupal/salesforce/oauth_callback)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Selected OAuth scopes&lt;/code&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Perform requests on your behalf at any time&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Access and manage your data&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Access your basic information&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;configurer-salesforce-sur-drupal&quot;&gt;Configurer Salesforce sur Drupal&lt;/h1&gt;
+
+&lt;p&gt;Sur Drupal, après avoir installé les modules, configurer Salesforce&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Modules &amp;gt; Salesforce API &amp;gt; Configurer &amp;gt; Authorize&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Ajouter les consumer et client keys de l’application connectée précédemment créée.&lt;/li&gt;
+  &lt;li&gt;Dans &lt;code class=&quot;highlighter-rouge&quot;&gt;Advanced&lt;/code&gt;, mettre l’URL de connexion (https://login.salesforce.com ou portail de la communauté)&lt;/li&gt;
+  &lt;li&gt;Cliquer sur &lt;code class=&quot;highlighter-rouge&quot;&gt;Authorize&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;interfacer-le-modle-de-donnes-drupal-avec-celui-de-salesforce&quot;&gt;Interfacer le modèle de données Drupal avec celui de Salesforce&lt;/h1&gt;
+
+&lt;p&gt;Sur Drupal, créer ensuite un mapping entre objet Salesforce et Drupal :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Modules &amp;gt; Salesforce Mapping &amp;gt; Configurer &amp;gt; add salesforce mapping&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Choisir une entité Drupal et un objet Salesforce&lt;/li&gt;
+  &lt;li&gt;Ajouter un mapping entre un champ de l’objet Drupal, et un de Salesforce. Attention, côté Salesforce, il faut que ce soit un external id.&lt;/li&gt;
+  &lt;li&gt;Choisir la méthode de synchronisation&lt;/li&gt;
+&lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://sylpheo.github.io/blog/connect-drupal-salesforce/&quot;&gt;Connecter Drupal et Salesforce&lt;/a&gt; was originally published by Sylpheo at &lt;a href=&quot;http://sylpheo.github.io&quot;&gt;Sylpheo&lt;/a&gt; on March 16, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
